@@ -3,14 +3,14 @@ import { MoviesResponse } from "../../../infrastructure/interfaces/movie-db.resp
 import { MovieMapper } from "../../../infrastructure/mappers/movie.mapper";
 import type { Movie } from "../../models/movie.model";
 
-export const moviesNowPlayingUseCase = async (fetcher: HttpAdapter): Promise<Movie[]> => {
+export const moviesTopRatedUseCase = async (fetcher: HttpAdapter): Promise<Movie[]> => {
   try {
-    const nowPlaying = await fetcher.get<MoviesResponse>('/now_playing');
+    const topRated = await fetcher.get<MoviesResponse>('/top_rated');
 
-    return nowPlaying.results.map(MovieMapper.fromMovieDBResultToModel)
+    return topRated.results.map(MovieMapper.fromMovieDBResultToModel)
 
 
   } catch (error) {
-    throw new Error("Error fetching movies - NowPlaying")
+    throw new Error("Error fetching movies - Top Rated")
   }
 }
