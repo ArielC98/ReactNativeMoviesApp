@@ -22,6 +22,8 @@ export const PosterCaroussel = ({ height = 440, movies }: Props) => {
             <MoviePoster
               key={movie.id}
               movie={movie}
+              height={323}
+              width={200}
             />
           )
         }

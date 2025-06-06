@@ -20,6 +20,7 @@ export const HomeScreen = () => {
       <View style={{ marginTop: top + 20, paddingBottom: 30 }}>
         <PosterCaroussel 
           movies={nowPlaying}
+          height={323}
         />
       </View>
     </ScrollView>
