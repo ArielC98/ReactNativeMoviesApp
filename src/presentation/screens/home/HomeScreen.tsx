@@ -28,6 +28,8 @@ export const HomeScreen = () => {
         <HorizontalCaroussel
           movies={popular}
           title="Popular"
+          loadNextPage={() => console.log("end reached")
+          }
         />
         <HorizontalCaroussel
           movies={topRated}

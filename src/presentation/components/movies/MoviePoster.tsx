@@ -19,7 +19,7 @@ export const MoviePoster = ({ movie, height = 420, width = 300 }: Props) => {
       style = {({pressed}) => ({
         width,
         height,
-        marginHorizontal: 10,
+        marginHorizontal: 1,
         paddingBottom: 20,
         paddingHorizontal: 5,
         opacity: pressed ? 0.8 : 1,
