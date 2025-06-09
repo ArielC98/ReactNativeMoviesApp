@@ -57,7 +57,7 @@ export const HorizontalCaroussel = ({ movies, title, loadNextPage }: Props) => {
         renderItem={({ item }) => (
           <MoviePoster movie={item} width={140} height={200} />
         )}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item,index) => `${item.id}-${index}`}
         horizontal
         showsHorizontalScrollIndicator
         onScroll={onScroll}
