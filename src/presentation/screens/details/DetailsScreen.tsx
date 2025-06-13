@@ -5,21 +5,25 @@ import { StackScreenProps } from "@react-navigation/stack";
 import { useMovie } from "../../hooks/useMovie";
 import { MovieHeader } from "../../components/movie/MovieHeader";
 
-interface Props extends StackScreenProps <RootStackParams, 'Details'> {}
+interface Props extends StackScreenProps<RootStackParams, 'Details'> { }
 
-export const DetailsScreen = ({route}:Props) => {
-  
-  const {movieId} = route.params;
-  const {isLoading,movie} = useMovie(movieId);
+export const DetailsScreen = ({ route }: Props) => {
 
-  if(isLoading){
+  const { movieId } = route.params;
+  const { isLoading, movie } = useMovie(movieId);
+
+  if (isLoading) {
     return <Text>Loading...</Text>
   }
 
   return (
     <View>
       {/* Header */}
-      <MovieHeader movie={movie!}/>
+      <MovieHeader
+        originalTitle={movie!.title}
+        title={movie!.title}
+        poster={movie!.poster}
+      />
       {/* Details */}
     </View>
   )
