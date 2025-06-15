@@ -16,7 +16,7 @@ export const MovieHeader = ({poster, originalTitle, title}:Props) => {
 
   return (
     <>
-      <View style={{...styles.imageContainer, height: screenHeight * 0.7}}>
+      <View style={{...styles.imageContainer, height: screenHeight * 0.7, padding:20, marginTop: 45}}>
         <View style = {styles.imageBorder}>
           <Image
             style = {styles.posterImage}
@@ -32,7 +32,7 @@ export const MovieHeader = ({poster, originalTitle, title}:Props) => {
 
       <View style = {styles.backButton}>
         <Pressable onPress={() => navigation.goBack()}>
-          <Text style ={styles.backButtonText}>Back</Text>
+          <Text style ={styles.backButtonText}>Go back</Text>
         </Pressable>
       </View>
     </>
@@ -44,13 +44,13 @@ const styles = StyleSheet.create({
     width: '100%',
     shadowColor: '#000',
     shadowOffset: {
-      width: 0,
+      width: 10,
       height: 10,
     },
-    shadowOpacity: 0.24,
-    shadowRadius: 7,
+    shadowOpacity: 0.44,
+    shadowRadius: 10,
 
-    elevation: 9,
+    elevation: 20,
     borderBottomEndRadius: 25,
     borderBottomStartRadius: 25,
   },
@@ -58,8 +58,7 @@ const styles = StyleSheet.create({
   imageBorder: {
     flex: 1,
     overflow: 'hidden',
-    borderBottomEndRadius: 25,
-    borderBottomStartRadius: 25,
+    borderRadius: 25,
   },
   posterImage: {
     flex: 1,
@@ -81,15 +80,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 999,
     elevation: 9,
-    top: 35,
-    left: 10,
+    top: 10,
+    left: 20,
   },
   backButtonText: {
-    color: 'white',
+    color: '#000000',
     fontSize: 25,
-    fontWeight: 'bold',
-    textShadowColor: 'rgba(0, 0, 0, 0.55)',
-    textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 10,
+    fontWeight: 'condensed',
+    // textShadowColor: 'rgba(0, 0, 0, 0.55)',
+    // textShadowOffset: {width: -1, height: 1},
+    // textShadowRadius: 10,
   },
 });
