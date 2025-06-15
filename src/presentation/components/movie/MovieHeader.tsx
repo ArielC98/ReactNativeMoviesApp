@@ -32,7 +32,7 @@ export const MovieHeader = ({poster, originalTitle, title}:Props) => {
 
       <View style = {styles.backButton}>
         <Pressable onPress={() => navigation.goBack()}>
-          <Text style ={styles.backButtonText}>Regresar</Text>
+          <Text style ={styles.backButtonText}>Back</Text>
         </Pressable>
       </View>
     </>
